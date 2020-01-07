@@ -1,0 +1,21 @@
+
+<div class="card w-75 shadow margin-vertical">
+  <div class="card-body">
+    <h4 class="card-title"><%= todo.title %></h4>
+    <p class="card-text"><%= todo.content %></p>
+    <% if todo.done.nil?%>
+    <samll><%= todo.created_at.strftime("%H:%M　作成") %></small>
+    
+    <% else %>
+    <samll><%= todo.updated_at.strftime("%H:%M　完了") %></small>
+    <% end %>
+    <div class = "right">
+      <% if todo.done.nil?%>
+      <%= link_to "完了",complete_path(todo), method: :post, class: "btn btn-success" %>
+      <% else %>
+       <%= link_to "Undo",undo_path(todo), method: :post, remote: true, class: "btn btn-info" %>
+      <% end %>
+       <%= link_to "削除",todo_path(todo), method: :delete, remote: true, class: "btn btn-danger" %>
+     </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+
+a{
+    color:rgb(100,100,100);
+}
+
+.container{
+    padding: 15px;
+}
+
+.center{
+    text-align: center;
+}
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
+
+.shadow{
+    border-radius: 5px;
+    box_shadow: 2px 2px 1px rgb(200,200,200);
+}
+
+.margin-vertical{
+    margin: 15px 0;
+}
+

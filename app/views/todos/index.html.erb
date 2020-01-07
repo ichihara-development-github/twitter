@@ -1,0 +1,41 @@
+<div class = "container">
+  
+  <h1><%= Date.today.strftime("%m月%d日")%>　のやること</h1>
+  <%= link_to "Done", done_path, class: "btn btn-secondary" %>
+
+  
+  <div class = "row">
+    
+    <div class = "col-md-8">
+
+<%= form_for @todo, remote: true do |f| %>
+
+<div class="form-group margin-vertical">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control"%>
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control", id:"exampleFormControlTextarea1", rows: "3" %>
+  <%= f.submit "作成",class: "btn btn-primary margin-vertical" %>
+</div>
+<% end %>
+
+</div>
+
+ <div class = "col-md-4">
+      <h3>free Tweet</h3>
+      <div class = "form-group">
+      <%= form_tag tweet_path, method: :post do %>
+      <%= text_area_tag :content, nil,class: "form-control", id: "exampleFormControlTextarea1", rows:"5" %>
+      <%= button_tag '<i class=" fab fa-twitter fa-2x" style = "color: deepskyblue"></i>'.html_safe, :type => "submit", :class =>"right" %>
+      
+      <% end %>
+      </div>
+       
+    </div>
+</div>
+
+<div class = "todo-index">
+<%= render @todos %>
+</div>
+
+</div>
